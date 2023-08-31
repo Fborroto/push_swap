@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 23:55:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/07/27 00:06:27 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:59:26 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-
+void	printstack(t_stack **stack);
+void	ft_add(t_stack **head_ref, int value);
+void	ft_init(t_stack **a, t_stack **b, char **argv, int argc);
+long	ft_atoi(const char *str);
+void	ft_putstr(char *str);
+void	ft_error(char *str);
+long	ft_atoi(const char *str);
+void	ft_check_arg(char **argv);
+char	**ft_split(char *s, char c);
 
 #endif

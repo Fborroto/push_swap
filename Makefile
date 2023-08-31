@@ -6,7 +6,7 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:02:43 by fborroto          #+#    #+#              #
-#    Updated: 2023/08/30 22:20:27 by fborroto         ###   ########.fr        #
+#    Updated: 2023/08/31 15:49:25 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ MAIN_SRC = src/*.c
 
 OBJ = *.o
 
-CFLAGS = -Wall -Wextra -Werror 
+#CFLAGS = -Wall -Wextra -Werror 
 
 RM = rm -rf
 
-STACK = $(shell python3 gen/gen.py 3)
+STACK = $(shell python3 gen/gen.py 500)
 
 all: $(NAME)
 
@@ -35,7 +35,7 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(SRC)
 	@echo "     - Making object files..."
-	@gcc -c $(SRC)
+	@gcc -c $(SRC) $(CFLAGS)
 
 gen: all
 	@./$(NAME) $(STACK)
