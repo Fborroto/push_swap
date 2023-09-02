@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 11:49:20 by fborroto          #+#    #+#             */
-/*   Updated: 2023/08/31 16:59:04 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/02 10:35:43 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	ft_check_arg(char **argv)
 
 void	ft_check_double(t_stack *a)
 {
-	int value;
-	t_stack  *tmp;
+	int		value;
+	t_stack	*tmp;
 
 	tmp = a;
 	while (a->next != NULL)
@@ -47,4 +47,3 @@ void	ft_check_double(t_stack *a)
 		a = a->next;
 	}
 }
-

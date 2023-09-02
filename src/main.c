@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:59:12 by fborroto          #+#    #+#             */
-/*   Updated: 2023/08/31 16:59:15 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/02 11:41:28 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ int	main(int argc, char **argv)
 	ft_check_arg(argv);
 	ft_init(&a, &b, argv, argc);
 	ft_check_double(a);
-	printstack(&a);
-	printf("arriva alla fine \n");
 	ft_close(&a, &b);
 	return (0);
 }

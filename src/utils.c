@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/08/31 16:15:48 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/02 10:37:51 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,28 @@ long	ft_atoi(const char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+void	decrease_index(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = (*stack);
+	while (tmp != NULL)
+	{
+		tmp->index = tmp->index - 1;
+		tmp = tmp->next;
+	}
+}
+
+void	increase_index(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = (*stack);
+	while (tmp != NULL)
+	{
+		tmp->index = tmp->index + 1;
+		tmp = tmp->next;
+	}
 }
