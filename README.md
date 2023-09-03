@@ -25,3 +25,12 @@ rra : reverse rotate a - shift down all elements of stack A by 1. The last eleme
 rrb : reverse rotate b - shift down all elements of stack B by 1. The last element becomes the first one.
 
 rrr : rra and rrb at the same time.
+
+
+
+Se quello cheap è sopra la media e il target anche, finché il numero non è alla prima posizione ft_rotate_rotate
+
+altrimenti se al contrario entrambi sono sotto la media, reverse rotate finché uno dei numeri non è alla prima posizione
+
+infine, controlla che entrambi abbiano raggiunto la prima posizione, altrimenti ruota ancora, se sopra la media rotate, sennò reverse rotate
+

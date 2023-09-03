@@ -6,7 +6,7 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:02:43 by fborroto          #+#    #+#              #
-#    Updated: 2023/09/02 11:19:23 by fborroto         ###   ########.fr        #
+#    Updated: 2023/09/03 23:36:42 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ = *.o
 
 RM = rm -rf
 
-STACK = $(shell python3 gen/gen.py 14)
+STACK = $(shell python3 gen/gen.py 5)
 
 all: $(NAME)
 
@@ -41,7 +41,9 @@ gen: all
 	@./$(NAME) $(STACK)
 
 test:all
-	@./$(NAME) 6 5 4 3 2 1
+	@./$(NAME) -37 412 -486 -171 202
+leak:all
+	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) $(STACK)
 
 clean: 
 	@${RM} ${OBJ}

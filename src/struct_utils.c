@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 11:11:02 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/02 11:42:15 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 00:08:06 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,25 @@ void	ft_init(t_stack **a, t_stack **b, char **argv, int argc)
 	int	i;
 
 	i = 1;
-	(*b) = NULL;
 	(*a) = NULL;
-	(*b) = (t_stack *)malloc(sizeof(t_stack));
-	if (!(*b))
-		return ;
-	(*b)->next = NULL;
 	while (i < argc)
 	{
 		ft_add(a, ft_atoi(argv[i]));
 		i++;
 	}
+}
+
+t_stack	*find_smallest(t_stack *a)
+{
+	t_stack *smallest;
+
+	smallest = a;
+
+	while (a)
+	{
+		if (a->value < smallest->value)
+			smallest = a;
+		a = a->next;
+	}
+	return (smallest);
 }

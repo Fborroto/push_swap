@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/02 10:37:51 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 00:08:03 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	increase_index(t_stack **stack)
 {
 	t_stack	*tmp;
 
+	if (!stack)
+		return ;
 	tmp = (*stack);
 	while (tmp != NULL)
 	{

@@ -3,6 +3,18 @@
         "editor.defaultFormatter": "keyhr.42-c-format"
     },
     "files.associations": {
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "type_traits": "c",
+        "random": "c",
+        "chrono": "c",
+        "variant": "c",
+        "optional": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "array": "c",
+        "functional": "c",
+        "tuple": "c",
+        "utility": "c"
     },
+    "C_Cpp.errorSquiggles": "disabled",
 }

@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 09:50:54 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/02 11:28:32 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/03 23:46:04 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,40 @@ void	swap_n(t_stack **stack, int ab)
 
 void	ft_swap_swap(t_stack **a, t_stack **b)
 {
-	swap_n(a, 1);
-	swap_n(b, 2);
+	swap_n(a, 3);
+	swap_n(b, 3);
 	ft_putstr("ss\n");
+}
+void	b_init(t_stack **from, t_stack **to, t_stack *tmp)
+{
+	
 }
 
 void	push_n(t_stack **from, t_stack **to, int ab)
 {
 	t_stack	*tmp;
-	t_stack	*tmp0;
 
 	if (!(*from))
 		return ;
-	increase_index(to);
 	tmp = (*from);
-	tmp0 = (*from)->next;
-	(*from)->prev = NULL;
+	if ((*from)->next)
+	{
+		(*from) = (*from)->next;
+		(*from)->prev = NULL;
+	}
+	else
+		(*from) = NULL;
+	increase_index(to);
+	if ((*to) == NULL)
+	{
+		(*to) = tmp;
+		tmp->next = NULL;
+		decrease_index(from);
+		ft_putstr("pb\n");
+		return ;
+		//b_init(to, from, tmp);
+	}
 	tmp->next = (*to);
-	(*from) = tmp0;
 	(*to)->prev = tmp;
 	(*to) = tmp;
 	decrease_index(from);
