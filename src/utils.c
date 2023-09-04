@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 00:08:03 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:58:28 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr(char *str)
 
 void	ft_error(char *str)
 {
-	printf("%s\n", str);
+	ft_putstr(str);
 	exit(0);
 }
 

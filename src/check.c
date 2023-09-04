@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 11:49:20 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/02 10:35:43 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:58:20 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_check_double(t_stack *a)
 		while (tmp != NULL)
 		{
 			if (a->value == tmp->value)
-				ft_error("Error:\n Found a number multiple times");
+				ft_error("Error: Found a number multiple times\n");
 			tmp = tmp->next;
 		}
 		a = a->next;

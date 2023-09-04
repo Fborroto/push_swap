@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 11:11:02 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 00:08:06 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:34:18 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,9 @@ void	ft_init(t_stack **a, t_stack **b, char **argv, int argc)
 
 t_stack	*find_smallest(t_stack *a)
 {
-	t_stack *smallest;
+	t_stack	*smallest;
 
 	smallest = a;
-
 	while (a)
 	{
 		if (a->value < smallest->value)

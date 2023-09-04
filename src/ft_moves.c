@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 09:50:54 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/03 23:46:04 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:41:24 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,17 @@ void	ft_swap_swap(t_stack **a, t_stack **b)
 	swap_n(b, 3);
 	ft_putstr("ss\n");
 }
-void	b_init(t_stack **from, t_stack **to, t_stack *tmp)
+
+void	push_finish(t_stack **from, t_stack **to, t_stack *tmp, int ab)
 {
-	
+	tmp->next = (*to);
+	(*to)->prev = tmp;
+	(*to) = tmp;
+	decrease_index(from);
+	if (ab == 1)
+		ft_putstr("pa\n");
+	else if (ab == 2)
+		ft_putstr("pb\n");
 }
 
 void	push_n(t_stack **from, t_stack **to, int ab)
@@ -61,16 +69,8 @@ void	push_n(t_stack **from, t_stack **to, int ab)
 		decrease_index(from);
 		ft_putstr("pb\n");
 		return ;
-		//b_init(to, from, tmp);
 	}
-	tmp->next = (*to);
-	(*to)->prev = tmp;
-	(*to) = tmp;
-	decrease_index(from);
-	if (ab == 1)
-		ft_putstr("pa\n");
-	else if (ab == 2)
-		ft_putstr("pb\n");
+	push_finish(from, to, tmp, ab);
 }
 
 void	rotate_n(t_stack **stack, int ab)
@@ -95,11 +95,4 @@ void	rotate_n(t_stack **stack, int ab)
 		ft_putstr("ra\n");
 	else if (ab == 2)
 		ft_putstr("rb\n");
-}
-
-void	ft_rotate_rotate(t_stack **a, t_stack **b)
-{
-	rotate_n(a, 3);
-	rotate_n(b, 3);
-	ft_putstr("rr\n");
 }

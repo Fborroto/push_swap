@@ -6,18 +6,17 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 23:55:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/03 23:49:20 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:46:50 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "limits.h"
 # include "stdbool.h"
-# include "stdio.h"
 # include "stdlib.h"
 # include "unistd.h"
-# include "limits.h"
 
 typedef struct s_stack
 {
@@ -55,5 +54,11 @@ void				ft_error(char *str);
 long				ft_atoi(const char *str);
 void				ft_check_arg(char **argv);
 void				ft_check_double(t_stack *a);
+void				set_price(t_stack *a, t_stack *b);
+void				set_cheapest(t_stack *b);
+void				set_target_node(t_stack *a, t_stack *b);
+void				set_above_median(t_stack *stack);
+void				rotate_both(t_stack **a, t_stack **b, t_stack *c, bool r);
+t_stack				*return_cheapest(t_stack *stack);
 t_stack				*last_node(t_stack **stack);
 #endif

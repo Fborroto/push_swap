@@ -6,25 +6,11 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:59:12 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 00:07:44 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:22:30 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	printstack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = (*stack);
-	printf("\n------print Stack------\n");
-	while (tmp)
-	{
-		printf("| value : %i index : %i | \n", tmp->value, tmp->index);
-		tmp = tmp->next;
-	}
-	printf("\n----------------------\n");
-}
 
 void	ft_close(t_stack **a, t_stack **b)
 {
@@ -59,6 +45,7 @@ int	ft_check_order(t_stack *stack)
 	}
 	return (1);
 }
+
 int	ft_list_len(t_stack *stack)
 {
 	if (!stack)
@@ -96,19 +83,6 @@ void	ft_sort3(t_stack **a)
 		swap_n(a, 1);
 }
 
-void	ft_sorter(t_stack **a, t_stack **b)
-{
-	if (ft_list_len((*a)) + 1 == 2)
-	{
-		swap_n(a, 1);
-		return ;
-	}
-	if (ft_list_len((*a)) + 1 == 3)
-		ft_sort3(a);
-	else
-		ft_big_sort(a, b);
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -125,7 +99,12 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		ft_sorter(&a, &b);
+		if (ft_list_len(a) + 1 == 2)
+			swap_n(&a, 1);
+		else if (ft_list_len(a) + 1 == 3)
+			ft_sort3(&a);
+		else
+			ft_big_sort(&a, &b);
 		ft_close(&a, &b);
 	}
 	return (0);

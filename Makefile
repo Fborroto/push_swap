@@ -6,7 +6,7 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:02:43 by fborroto          #+#    #+#              #
-#    Updated: 2023/09/03 23:36:42 by fborroto         ###   ########.fr        #
+#    Updated: 2023/09/04 14:41:29 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ = *.o
 
 RM = rm -rf
 
-STACK = $(shell python3 gen/gen.py 5)
+STACK = $(shell python3 gen/gen.py 116)
 
 all: $(NAME)
 
