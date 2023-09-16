@@ -31,7 +31,6 @@ void	ft_check_arg(char **argv)
 
 void	ft_check_double(t_stack *a)
 {
-	int		value;
 	t_stack	*tmp;
 
 	tmp = a;

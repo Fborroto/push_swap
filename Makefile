@@ -19,7 +19,7 @@ MAIN_SRC = src/*.c
 
 OBJ = *.o
 
-#CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror 
 
 RM = rm -rf
 
@@ -44,7 +44,8 @@ test:all
 	@./$(NAME) -37 412 -486 -171 202
 leak:all
 	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) $(STACK)
-
+leakmac:all
+	@@leaks --atExit -- ./$(NAME) $(STACK)
 clean: 
 	@${RM} ${OBJ}
 

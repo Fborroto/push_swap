@@ -91,7 +91,7 @@ int	main(int argc, char **argv)
 	if (argc < 3)
 		return (0);
 	ft_check_arg(argv);
-	ft_init(&a, &b, argv, argc);
+	ft_init(&a, argv, argc);
 	ft_check_double(a);
 	if (ft_check_order(a) == 1)
 	{

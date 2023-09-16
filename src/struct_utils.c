@@ -40,7 +40,7 @@ void	ft_add(t_stack **head_ref, int value)
 	new_node->index = last->index + 1;
 }
 
-void	ft_init(t_stack **a, t_stack **b, char **argv, int argc)
+void	ft_init(t_stack **a, char **argv, int argc)
 {
 	int	i;
 

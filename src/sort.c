@@ -74,8 +74,6 @@ static	void	sort_b(t_stack **a, t_stack **b)
 
 void	ft_big_sort(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
-
 	if (ft_list_len((*a)) + 1 == 5)
 	{
 		while (ft_list_len((*a)) > 3)
@@ -83,7 +81,7 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 			update_struct(a, b);
 			finish_rotation(a, find_smallest((*a)), true);
 			push_n(a, b, 2);
-		}	
+		}
 	}
 	while (ft_list_len((*a)) != 2)
 		push_n(a, b, 2);

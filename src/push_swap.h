@@ -46,7 +46,7 @@ void				increase_index(t_stack **stack);
 void				rotate_rotate_n(t_stack **stack, int ab);
 void				rotate_rotate_rotate(t_stack **a, t_stack **b);
 void				rotate_n(t_stack **stack, int ab);
-void				ft_init(t_stack **a, t_stack **b, char **argv, int argc);
+void				ft_init(t_stack **a, char **argv, int argc);
 void				push_n(t_stack **from, t_stack **to, int ab);
 long				ft_atoi(const char *str);
 void				ft_putstr(char *str);
