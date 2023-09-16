@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:59:12 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 14:22:30 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:01:10 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,34 +53,6 @@ int	ft_list_len(t_stack *stack)
 	while (stack->next != NULL)
 		stack = stack->next;
 	return (stack->index);
-}
-
-void	ft_sort3(t_stack **a)
-{
-	if ((*a)->value > (*a)->next->value
-		&& (*a)->value > (*a)->next->next->value)
-	{
-		if ((*a)->next->value > (*a)->next->next->value)
-		{
-			swap_n(a, 1);
-			rotate_rotate_n(a, 1);
-		}
-		else
-			rotate_n(a, 1);
-	}
-	else if ((*a)->next->value > (*a)->value
-		&& (*a)->next->value > (*a)->next->next->value)
-	{
-		if ((*a)->value > (*a)->next->next->value)
-			rotate_rotate_n(a, 1);
-		else
-		{
-			swap_n(a, 1);
-			rotate_n(a, 1);
-		}
-	}
-	else
-		swap_n(a, 1);
 }
 
 int	main(int argc, char **argv)

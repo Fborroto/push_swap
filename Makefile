@@ -6,7 +6,7 @@
 #    By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:02:43 by fborroto          #+#    #+#              #
-#    Updated: 2023/09/04 14:41:29 by fborroto         ###   ########.fr        #
+#    Updated: 2023/09/16 18:00:37 by fborroto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ gen: all
 	@./$(NAME) $(STACK)
 
 test:all
-	@./$(NAME) -37 412 -486 -171 202
+	@./$(NAME) 5 2 3 4 1
 leak:all
 	@valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) $(STACK)
 leakmac:all

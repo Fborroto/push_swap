@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 23:55:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 14:46:50 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/16 18:01:27 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_stack				*find_smallest(t_stack *a);
 void				ft_sort3(t_stack **a);
 int					ft_list_len(t_stack *stack);
 void				ft_big_sort(t_stack **a, t_stack **b);
-void				printstack(t_stack **stack);
 void				ft_add(t_stack **head_ref, int value);
 void				swap_n(t_stack **stack, int ab);
 void				decrease_index(t_stack **stack);

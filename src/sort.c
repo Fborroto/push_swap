@@ -76,7 +76,7 @@ void	ft_big_sort(t_stack **a, t_stack **b)
 {
 	if (ft_list_len((*a)) + 1 == 5)
 	{
-		while (ft_list_len((*a)) > 3)
+		while (ft_list_len((*a)) > 2)
 		{
 			update_struct(a, b);
 			finish_rotation(a, find_smallest((*a)), true);
