@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:59:12 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/16 18:01:10 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:08:46 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,21 @@ void	ft_close(t_stack **a, t_stack **b)
 	tmp = (*a);
 	while (tmp->next != NULL)
 	{
+		tmp = (*a);
+		(*a) = (*a)->next;
 		free(tmp);
-		tmp = tmp->next;
 	}
-	free(tmp);
+	free((*a));
 	if (!(*b))
 		exit(0);
 	tmp = (*b);
 	while (tmp->next != NULL)
 	{
+		tmp = (*b);
+		(*b) = (*b)->next;
 		free(tmp);
-		tmp = tmp->next;
 	}
-	free(tmp);
+	free((*b));
 	exit(0);
 }
 
@@ -60,11 +62,12 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	if (argc < 3)
+	b = NULL;
+	if (argc < 2)
 		return (0);
 	ft_check_arg(argv);
 	ft_init(&a, argv, argc);
-	ft_check_double(a);
+	ft_check_double(a, b);
 	if (ft_check_order(a) == 1)
 	{
 		ft_close(&a, &b);

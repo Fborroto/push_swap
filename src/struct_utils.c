@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 11:11:02 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 14:34:18 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/10/10 13:46:05 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_add(t_stack **head_ref, int value)
 	if (!new_node)
 		return ;
 	new_node->value = value;
+	new_node->cheapest = false;
 	if (*head_ref == NULL)
 	{
 		new_node->next = NULL;
@@ -40,16 +41,41 @@ void	ft_add(t_stack **head_ref, int value)
 	new_node->index = last->index + 1;
 }
 
-void	ft_init(t_stack **a, char **argv, int argc)
+static void	ft_include_quoted(char **array, t_stack **a)
 {
 	int	i;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		ft_add(a, ft_atoi(array[i]));
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
+void	ft_init(t_stack **a, char **argv, int argc)
+{
+	int		i;
+	char	**array;
 
 	i = 1;
 	(*a) = NULL;
 	while (i < argc)
 	{
-		ft_add(a, ft_atoi(argv[i]));
-		i++;
+		if (ft_is_quoted(argv[i]))
+		{
+			array = ft_split(argv[i], ' ');
+			ft_check_int(array);
+			ft_include_quoted(array, a);
+			i++;
+		}
+		else
+		{
+			ft_add(a, ft_atoi(argv[i]));
+			i++;
+		}
 	}
 }
 

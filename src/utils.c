@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:15:03 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 14:58:28 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:27:26 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ void	ft_putstr(char *str)
 
 void	ft_error(char *str)
 {
-	ft_putstr(str);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i ++;
+	write(2, str, i);
 	exit(0);
 }
 
@@ -43,11 +48,11 @@ long	ft_atoi(const char *str)
 		i++;
 	}
 	if (str[i] == '\0')
-		ft_error("Error: Invalid input\n");
+		return (2147483649);
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')
-			ft_error("Error: Invalid input\n");
+			return (2147483649);
 		result = result * 10 + str[i] - '0';
 		i++;
 	}

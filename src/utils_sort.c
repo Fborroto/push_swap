@@ -6,7 +6,7 @@
 /*   By: fborroto <fborroto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:22:10 by fborroto          #+#    #+#             */
-/*   Updated: 2023/09/04 14:36:47 by fborroto         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:59:32 by fborroto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,8 @@ void	set_target_node(t_stack *a, t_stack *b)
 
 void	set_above_median(t_stack *stack)
 {
-	int	i;
 	int	centerline;
 
-	i = 0;
 	if (NULL == stack)
 		return ;
 	centerline = (ft_list_len(stack) + 1) / 2;
